@@ -12,7 +12,7 @@ use backend\models\PasswordResetRequestForm;
 use backend\models\ResetPasswordForm;
 use backend\models\SignupForm;
 use backend\models\ContactForm;
-use backend\models\EntryForm;
+use backend\models\ShowUserForm;
 use backend\models\AddUserForm;
 
 /**
@@ -220,19 +220,19 @@ class SiteController extends Controller
         return $this->render('say', ['message' => $message]);
     }
 
-    public function actionEntry()
+    public function actionShowUser()
     {
-        $model = new EntryForm();
+        $model = new ShowUserForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // valid data received in $model
 
             // do something meaningful here about $model ...
 
-            return $this->render('entry', ['model' => $model]);
+            return $this->render('show-user', ['model' => $model]);
         } else {
             // either the page is initially displayed or there is some validation error
-            return $this->render('entry', ['model' => $model]);
+            return $this->render('show-user', ['model' => $model]);
         }
     }
 
