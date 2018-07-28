@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
-use yii\helpers\ApiHelper;
 use yii\widgets\ActiveForm;
+use common\components\ApiHelper;
 ?>
 <?php $form = ActiveForm::begin(); ?>
 

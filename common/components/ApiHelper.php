@@ -1,9 +1,6 @@
 <?php
-/*
- *
- *
- */
-namespace yii\helpers;
+
+namespace  common\components;
 
 class ApiHelper
 {
