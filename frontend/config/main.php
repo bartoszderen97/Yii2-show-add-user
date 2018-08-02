@@ -45,5 +45,12 @@ return [
         ],
         */
     ],
+    'cache'         => [
+
+        'class'        => 'yii\caching\MemCache',
+
+        'useMemcached' => true,
+
+    ],
     'params' => $params,
 ];
