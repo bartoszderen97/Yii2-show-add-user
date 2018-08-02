@@ -12,12 +12,11 @@ class ApiHelper
         if(empty($model->page))
             $model->page=1;
 
-        $urlAdress = "http://reqres.in/api/users?page=".$model->page;
         $cache = Yii::$app->cache;
-        $key   = $urlAdress;
+        $key   = "http://reqres.in/api/users?page=".$model->page;
         $data  = $cache->get($key);
         if ($data === false) {
-            $data = file_get_contents($urlAdress);
+            $data = file_get_contents($key);
             $cache->set($key, $data, 60);
         }
         return $data;
