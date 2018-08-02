@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\caching\MemCache;
 use backend\models\ShowUserForm;
 
 class ShowUserController extends \yii\web\Controller
@@ -14,13 +15,13 @@ class ShowUserController extends \yii\web\Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // valid data received in $model
 
-            // do something meaningful here about $model ...
 
             return $this->render('show-user', ['model' => $model]);
         } else {
             // either the page is initially displayed or there is some validation error
             return $this->render('show-user', ['model' => $model]);
         }
+
     }
 
 }
