@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\components\ApiHelper;
+
 ?>
 <?php $form = ActiveForm::begin(); ?>
 
@@ -16,7 +17,6 @@ use common\components\ApiHelper;
 
 
 <?php
-$content=ApiHelper::getURLcontent($model);
-$result  = json_decode($content);
+$result  = ApiHelper::getURLdata();
 include  'show-user-confirm.php';
 ?>

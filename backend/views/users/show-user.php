@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\components\ApiHelper;
@@ -18,7 +17,6 @@ use common\components\ApiHelper;
 
 
 <?php
-$content=ApiHelper::getURLcontent($model);
-$result  = json_decode($content);
+$result  = ApiHelper::getURLdata();
 include  'show-user-confirm.php';
 ?>

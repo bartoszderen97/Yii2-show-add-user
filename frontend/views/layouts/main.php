@@ -37,8 +37,8 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Show User', 'url' => ['/show-user/show-user']],
-        ['label' => 'AddUser', 'url' => ['/add-user/add-user']],
+        ['label' => 'Show User', 'url' => ['/users/show-user']],
+        ['label' => 'Add User', 'url' => ['/users/add-user']],
     ];
 
     echo Nav::widget([
