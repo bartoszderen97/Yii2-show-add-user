@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+$this->title = 'Add User Form';
+
 ?>
 <?php $form = ActiveForm::begin(); ?>
 

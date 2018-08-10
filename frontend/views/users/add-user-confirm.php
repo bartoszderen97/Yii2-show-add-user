@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Html;
+$this->title = 'User added';
+
 ?>
 <p>You have added the following user:</p>
 

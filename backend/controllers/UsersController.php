@@ -18,13 +18,17 @@ class UsersController extends \yii\web\Controller
 
             // do something meaningful here about $model ...
 
-            ApiHelper::getURLcontent($model);
-            return $this->render('show-user', ['model' => $model]);
+            $result = ApiHelper::getURLcontent($model);
+            if(!empty($result)) {
+                return $this->render('show-user', ['model' => $model, 'result' => $result]);
+            }
         } else {
             // either the page is initially displayed or there is some validation error
 
-            ApiHelper::getURLcontent($model);
-            return $this->render('show-user', ['model' => $model]);
+            $result = ApiHelper::getURLcontent($model);
+            if(!empty($result)) {
+                return $this->render('show-user', ['model' => $model, 'result' => $result]);
+            }
         }
     }
 

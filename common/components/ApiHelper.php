@@ -7,8 +7,6 @@ use yii\caching\MemCache;
 
 class ApiHelper
 {
-    static $mydata=null;
-
     public static function getURLcontent($model){
 
         if(empty($model->page))
@@ -21,10 +19,6 @@ class ApiHelper
             $data = file_get_contents($key);
             $cache->set($key, $data, 60);
         }
-        $data = json_decode($data);
-        ApiHelper::$mydata = $data;
-    }
-    public static function getURLdata(){
-        return ApiHelper::$mydata;
+        return json_decode($data);
     }
 }
