@@ -15,7 +15,7 @@ nbproject
 .settings
 
 # windows thumbnail cache
-Thumbs.db# composer vendor dir/vendor# composer itself is not needed composer.phar
+Thumbs.db
 
 # composer vendor dir
 /vendor

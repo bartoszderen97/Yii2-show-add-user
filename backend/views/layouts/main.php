@@ -3,11 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use backend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
@@ -37,10 +37,19 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Show User', 'url' => ['/users/show-user']],
-        ['label' => 'Add User', 'url' => ['/users/add-user']],
     ];
-
+    if (Yii::$app->user->isGuest) {
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    } else {
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>';
+    }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
